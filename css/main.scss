@@ -1,0 +1,84 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    overflow-x: hidden;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    padding: 3em;
+    box-sizing: border-box;
+    color: white;
+    scroll-snap-align: start;
+    
+    @media(min-width: 768px) {
+        padding: 6em;
+    }
+
+    h1 {
+        font-size: 4em;
+
+        @media(min-width: 768px) {
+            font-size: 5em
+        }
+    }
+
+    h2 {
+        font-size: 1.4em;
+
+        @media(min-width: 768px) {
+            font-size: 2em;
+        }
+    }
+
+    p {
+        width: 100%;
+        opacity: .8;
+        line-height: 1.5em;
+        font-size: 1.3em;
+        
+        @media(min-width: 768px) {
+            width: 50%;
+            opacity: .8;
+            line-height: 1.5em;
+            font-size: 1
+        }
+    }
+}
+
+section:nth-of-type(1) {
+    background: linear-gradient(45deg, #ee5253, #5f27cd);
+}
+
+section:nth-of-type(2) {
+    background: #ee5253;
+}
+
+section:nth-of-type(3) {
+    background: linear-gradient(to right, #ff9f43, #feca57);
+}
+
+section:nth-of-type(4) {
+    background: #f368e0;
+}
+
+[data-scroll] {
+    transition: all 1.6s;
+}
+
+[data-scroll="in"] {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-scroll="out"] {
+    opacity: 0;
+    transform: translateX(-200px);
+}
